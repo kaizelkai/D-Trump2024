@@ -187,6 +187,11 @@ nav a:hover .menuEffet {
         
     }
 
+    .slideImage{
+        max-width: 200px;
+    
+    }
+
 }
 
 /*                 */
@@ -312,7 +317,9 @@ nav a:hover .menuEffet {
 .boxp{
     background-color: #040931;
     padding: 24px;
-    margin: 1px;
+    
+    margin-left: -80px;
+    margin-right: -80PX;
     flex-wrap: wrap-reverse;
     border-radius: 50px;
     border: 10px solid #f04;
@@ -395,7 +402,12 @@ min-width: 300px;
     font-size: 14px;
 }
 
+.presnetationTrump3{
+    padding: 50px;
+}
+
 .slideImage{
-    max-width: 300px;
+    border-radius: 50px;
+    max-width: 280px;
 
 }

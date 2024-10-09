@@ -116,7 +116,12 @@ nav a:hover .menuEffet {
     width: 100%;
 }
 
-
+@media(min-width: 769px){
+    .boxp{
+        display: flex;
+        flex-wrap: wrap-reverse;
+    }
+}
 /* Style pour les petites écrans */
 @media (max-width: 768px) {
     
@@ -298,7 +303,7 @@ nav a:hover .menuEffet {
     background-color: #040931;
     padding: 20px;
     margin: 50px;
-    display: flex;
+    flex-wrap: wrap-reverse;
     border-radius: 50px;
     border: 10px solid rgb(223, 215, 6);
     align-items: center; 

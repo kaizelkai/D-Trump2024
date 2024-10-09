@@ -1,0 +1,351 @@
+/* Style par défaut pour les éléments */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+header {
+   /* background-color: rgba(26, 26, 26, 0.7);  Fond transparent avec opacité */
+   backdrop-filter: blur(0px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #0b0349;
+    color: white;
+}
+
+.iconTo img {
+    width: 50px;
+    height: auto;
+}
+
+.menu-icon {
+    font-size: 30px;
+    cursor: pointer;
+    display: none; /* Masqué par défaut, visible sur mobile */
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    padding: 10px;
+    position: relative;
+}
+
+nav a .menuEffet {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    background-color: #f04;
+     /*transition: width 0.3s;*/
+}
+
+.menuEffet {
+    font-family: 'Protest Strike';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #f04; /* Couleur de fond pour le menu effet */
+    border-radius: 5px; /* Arrondir les coins du fond */
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Transition pour l'effet */
+    transform: scale(0); /* Commencez par être invisible */
+    z-index: -1; /* Positionner derrière le texte */
+    
+    opacity: 1;
+}
+
+nav a:hover .menuEffet {
+    width: 100%;
+    transform: scale(1); /* L'effet devient visible au survol */
+}
+
+
+.bt_buy a {
+    color: white;
+    text-decoration: none;
+    background-color: #f04;
+    padding: 10px 10px;
+    border-radius: 5px;
+}
+
+.bt_buy:hover {
+    transform: scale(1.2);
+    
+}
+
+.bt_buy a {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    background-color: #f04;
+    padding: 15px 30px; /* Espacement interne plus grand pour agrandir le bouton */
+    border-radius: 5px;
+    width: auto; /* Laisse la largeur s'adapter au contenu */
+    position: relative;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.bt_buy a .menuEffet {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: white;
+    transition: width 0.3s;
+
+}
+
+.bt_buy a:hover .menuEffet {
+    width: 100%;
+}
+
+
+/* Style pour les petites écrans */
+@media (max-width: 768px) {
+    
+    .menu-icon {
+        display: block; /* Icône du menu visible sur les petits écrans */
+    }
+
+    nav {
+        
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #0b0349;
+        width: 30%; /* Occupe toute la largeur de l'écran */
+        height: 0; /* Hauteur initiale à 0 pour cacher le menu */
+        overflow: hidden;
+        flex-direction: column;
+        transition: height 0.3s ease-in-out; /* Transition pour la hauteur */
+    }
+
+    nav.open {
+        height: auto; /* Ajuste la hauteur en fonction du contenu */
+    }
+
+    nav a {
+        display: block; /* Chaque lien prend toute la largeur */
+        margin: 10px 0;
+        padding: 15px;
+        text-align: center;
+        width: 100%; /* Chaque lien prend toute la largeur disponible */
+    }
+
+    .vote {
+        position: absolute; /* Positionnement absolu pour superposer */
+        width: 100%;
+        top: 50%; /* Centre verticalement par rapport à la fenêtre */
+        left: 50%; /* Centre horizontalement par rapport à la fenêtre */
+        transform: translate(-50%, -50%); /* Ajuste pour centrer exactement */
+        text-align: center; /* Centre le texte à l'intérieur de la div */
+        z-index: 2; /* Positionner au-dessus de l'autre image */
+        color: white; /* Change la couleur du texte si nécessaire */
+        font-family: Arial, sans-serif; /* Définit une police */
+    }
+
+    .vote h1{
+        margin: 25px;
+        font-size: 25px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    }
+
+    .boxp{
+        justify-content: center;
+        align-items: center; 
+        padding: 1px; 
+        margin: 1px;
+    }
+    
+}
+
+/*                 */
+.trumpImge{
+    background: linear-gradient(to bottom, #002694, #0097da);
+}
+.presnetationTrump {
+    position: relative; /* Le conteneur parent doit être positionné relativement */
+    width: 100%;
+    height: 100vh; /* Hauteur de la section */
+    overflow: hidden; /* Masque les parties qui dépassent */
+}
+
+
+.presnetationTrump .gif {
+    position: absolute; /* Positionnement absolu pour superposer */
+    top: 0; /* Alignement en haut */
+    left: 0; /* Alignement à gauche */
+    width: 100%; /* Prend toute la largeur */
+    height: 100%; /* Prend toute la hauteur */
+    display: flex;
+    justify-content: center; /* Centrer le contenu si nécessaire */
+    align-items: center; /* Centrer verticalement si nécessaire */
+    z-index: 3; /* Positionner au-dessus de l'autre image */
+}
+
+.presnetationTrump .image {
+    position: relative; /* Positionnement relatif pour l'image du fond */
+    width: 100%; /* Prend toute la largeur */
+    height: 100%; /* Prend toute la hauteur */
+    z-index: 1; /* Positionner derrière l'autre image */
+}
+
+.presnetationTrump img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Remplir l'espace sans déformation */
+}
+
+.vote {
+    position: absolute; /* Positionnement absolu pour superposer */
+    top: 50%; /* Centre verticalement par rapport à la fenêtre */
+    left: 50%; /* Centre horizontalement par rapport à la fenêtre */
+    transform: translate(-50%, -50%); /* Ajuste pour centrer exactement */
+    text-align: center; /* Centre le texte à l'intérieur de la div */
+    z-index: 2; /* Positionner au-dessus de l'autre image */
+    color: rgb(255, 251, 251); /* Change la couleur du texte si nécessaire */
+    font-family: 'Sixtyfour'; /* Définit une police */
+}
+
+.vote h1{
+    margin: 45px;
+    font-size: 45px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.vote2 {
+    position: absolute; /* Positionnement absolu pour superposer */
+    top: 50%; /* Centre verticalement par rapport à la fenêtre */
+    left: 50%; /* Centre horizontalement par rapport à la fenêtre */
+    transform: translate(-50%, -50%); /* Ajuste pour centrer exactement */
+    width: 100%; /* Largeur de la div à 100% */
+    overflow: hidden; /* Cache le texte qui déborde */
+    white-space: nowrap; /* Empêche le texte de passer à la ligne */
+}
+
+#line {
+    position: relative; /* Positionnement relatif pour le mouvement */
+    animation: scroll 10s linear infinite; /* Animation pour le défilement */
+    color: rgb(255, 251, 251); /* Couleur du texte */
+    font-family: 'Sixtyfour'; /* Définit une police */
+    font-size: 45px; /* Taille de la police */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Ombre du texte */
+}
+
+@keyframes scroll {
+    from {
+        transform: translateX(0%); /* Commence à droite */
+    }
+    to {
+        transform: translateX(-200%); /* Termine à gauche */
+    }
+}
+
+
+/* presnetationTrump2 */
+.bar img{
+    position: relative; /* Le conteneur parent doit être positionné relativement */
+    width: 100%;
+    height: 180px;
+    margin-bottom: -48px;
+    margin-top: -77px; /* Hauteur de la section */
+    overflow: hidden;
+}
+
+.presnetationTrump2 {
+    position: relative; /* Le conteneur parent doit être positionné relativement */
+    width: 100%;
+    height: 100vh; /* Hauteur de la section à la taille de la fenêtre */
+    overflow: hidden; /* Masque les parties qui dépassent */
+}
+
+.presnetationTrump2 .image {
+    margin-left: 20%;
+    margin-right: 50%;
+    position: absolute; /* Pour que l'image occupe tout l'espace */
+    bottom: 0; /* S'assure que l'image touche le bas de la section */
+    width: 60%;
+    height: 85%; /* Prend toute la hauteur de la section */
+    z-index: 1; /* Position derrière les autres éléments si nécessaire */
+}
+
+.presnetationTrump2 img {
+    width: 100%;
+    height: 100%; /* Prend toute la hauteur de son conteneur */
+     /* Assure que l'image couvre toute la section sans déformation */
+    display: block; /* Supprime tout espace blanc en dessous de l'image */
+}
+
+
+.boxp{
+    background-color: #040931;
+    padding: 20px;
+    margin: 50px;
+    display: flex;
+    border-radius: 50px;
+    border: 10px solid rgb(223, 215, 6);
+    align-items: center; 
+
+    flex-wrap: wrap-reverse;
+    
+}
+
+.swiper {
+    width: 50%;
+/*min-width: 500px;*/
+    
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    color: white;
+}
+
+.is-character-text {
+    font-size: 48px;
+    text-align: center;
+}
+
+.is-heading {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.is-sp-content{
+    align-items: center;
+}
+
+.is-character-1, .is-character-3, .is-character-2{
+    
+    margin-top: 25px;
+    margin-bottom: 40px;
+}
+
+.is-heading{
+    font-family: 'Protest Strike';
+}

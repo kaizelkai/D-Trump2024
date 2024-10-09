@@ -322,7 +322,7 @@ nav a:hover .menuEffet {
     border: 10px solid #f04;
     align-items: center; 
     margin-bottom: 45px;
-
+    display: flex;
     flex-wrap: wrap-reverse;
     
 }

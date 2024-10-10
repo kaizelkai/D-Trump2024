@@ -53,6 +53,7 @@ nav a .menuEffet {
      /*transition: width 0.3s;*/
 }
 
+
 .menuEffet {
     font-family: 'Protest Strike';
     position: absolute;
@@ -65,16 +66,14 @@ nav a .menuEffet {
     transition: transform 0.3s ease, opacity 0.3s ease; /* Transition pour l'effet */
     transform: scale(0); /* Commencez par être invisible */
     z-index: -1; /* Positionner derrière le texte */
-    
     opacity: 1;
 }
-
 nav a:hover .menuEffet {
     width: 100%;
     transform: scale(1); /* L'effet devient visible au survol */
 }
-
-
+opacity: 1;
+    z-index: 0;
 .bt_buy a {
     color: white;
     text-decoration: none;
@@ -111,6 +110,7 @@ nav a:hover .menuEffet {
     transition: width 0.3s;
 
 }
+
 
 .bt_buy a:hover .menuEffet {
     width: 100%;
@@ -161,12 +161,13 @@ nav a:hover .menuEffet {
     }
 
     /*bouton droite gauche*/
-
-    .swiper-prev , .swiper-next {
+    /* Transitions fluides pour les boutons swiper */
+    .swiper-prev, .swiper-next {
         border-radius: 100%;
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
+        
         color: #f04;
         border: none;
         width: 90px;
@@ -177,7 +178,9 @@ nav a:hover .menuEffet {
         display: flex;
         justify-content: center;
         align-items: center;
+        transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease;
     }
+
 
     /* Bouton gauche */
     .swiper-prev {
@@ -206,8 +209,6 @@ nav a:hover .menuEffet {
 /* Style pour les petites écrans */
 @media (max-width: 768px) {
 
-    
-
     .swiper-prev, .swiper-next {
         display: none;
     }
@@ -229,6 +230,7 @@ nav a:hover .menuEffet {
         align-items: center; 
         
     }
+
     
     .boxp .swiper-content{
         flex-wrap: wrap-reverse;
@@ -238,6 +240,9 @@ nav a:hover .menuEffet {
         
     }
     
+    .swiper {
+        width: 100%;
+    }
     
     .presnetationTrump2 .image {
         width: 100%;
@@ -281,6 +286,8 @@ nav a:hover .menuEffet {
         width: 100%; /* Chaque lien prend toute la largeur disponible */
     }
 
+    
+
     .vote {
         position: absolute; /* Positionnement absolu pour superposer */
         width: 100%;
@@ -313,11 +320,11 @@ nav a:hover .menuEffet {
     }
 
     .swiper-slide img {
-        width: 50px;
-        height: 50px;
-        
-        
-    }
+    width: 100%;
+    height: auto; /* Maintient le ratio de l'image */
+    object-fit: contain; /* Garantit que l'image ne sera pas déformée */
+}
+
 
     .slideImage{
         max-width: 200px;

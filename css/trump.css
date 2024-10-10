@@ -117,17 +117,133 @@ nav a:hover .menuEffet {
 }
 
 @media (min-width: 768px){
+    
     .presnetationTrump2 .image {
-        width: 100%;
+        width: 60%;
         height: 85%;
+
+        margin-left: 20%;
+        margin-right: 50%;
+        position: absolute; /* Pour que l'image occupe tout l'espace */
+        bottom: 0; /* S'assure que l'image touche le bas de la section */
+        /* Prend toute la hauteur de la section */
+        z-index: 1; /* Position derrière les autres éléments si nécessaire */
+    }
+    
+
+    .boxp .swiper-content{
+        flex-wrap: wrap-reverse;
+        align-items: center;
+        display: flex;
+        flex-wrap: wrap-reverse;
+        
+    }
+    .boxp{
+        position: relative;
+        border: 10px solid #f04;
+        background-color: #040931;
+        padding: 24px;
+        margin: 50px;
+        border-radius: 50px;
+    }
+
+    .sp_font-sixtyfour-spacing{
+        font-size: 45px;
+        font-family: 'Sixtyfour';
+    }
+    
+    .main{
+        padding: 1px;
+    }
+
+    .presnetationTrump3{
+        padding: 0px;
+    }
+
+    /*bouton droite gauche*/
+
+    .swiper-prev , .swiper-next {
+        border-radius: 100%;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #f04;
+        border: none;
+        width: 90px;
+        height: 90px;
+        cursor: pointer;
+        z-index: 10;
+        font-size: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Bouton gauche */
+    .swiper-prev {
+        margin-left: -53px;
+        left: 0; /* Aligner sur le bord gauche */
+    }
+
+    /* Bouton droit */
+    .swiper-next {
+        
+        margin-right: -53px;
+        right: 0; /* Aligner sur le bord droit */
+    }
+
+    .swiper-prev:hover, .swiper-next:hover {
+        background-color: rgba(0, 0, 0, 0.7); /* Plus sombre au survol */
     }
 }
 /* Style pour les petites écrans */
 @media (max-width: 768px) {
+
+    
+
+    .swiper-prev, .swiper-next {
+        display: none;
+    }
+
+    .presnetationTrump3{
+        padding: 50px;
+    }
+    .sp_font-sixtyfour-spacing{
+        font-size: 25px;
+        font-family: 'Sixtyfour';
+    }
+    .boxp {
+        background-color: #040931;
+        padding: 24px;
+        margin-left: -80px;
+        margin-right: -80PX;
+        border-radius: 50px;
+        border: 10px solid #f04;
+        align-items: center; 
+        
+    }
+    
+    .boxp .swiper-content{
+        flex-wrap: wrap-reverse;
+        border-radius: 50px;
+        align-items: center; 
+        display: flex;
+        
+    }
+    
     
     .presnetationTrump2 .image {
         width: 100%;
-        height: 55%;
+        height: 65%;
+
+        overflow: hidden;
+        margin-left: 0;
+        margin-right: 0;
+        position: absolute; /* Pour que l'image occupe tout l'espace */
+        bottom: 0; /* S'assure que l'image touche le bas de la section */
+        /* Prend toute la hauteur de la section */
+        z-index: 1;
+        
     }
     .menu-icon {
         display: block; /* Icône du menu visible sur les petits écrans */
@@ -198,8 +314,9 @@ nav a:hover .menuEffet {
 
     .slideImage{
         max-width: 200px;
-    
     }
+
+    
 
 }
 
@@ -306,14 +423,9 @@ nav a:hover .menuEffet {
 }
 
 .presnetationTrump2 .image {
-    margin-left: 20%;
-    margin-right: 50%;
-    position: absolute; /* Pour que l'image occupe tout l'espace */
-    bottom: 0; /* S'assure que l'image touche le bas de la section */
-    max-width: 60%;
-    max-height: 85%;
-     /* Prend toute la hauteur de la section */
-    z-index: 1; /* Position derrière les autres éléments si nécessaire */
+    max-width: 100%;
+    max-height: 100%;
+   
 }
 
 .presnetationTrump2 img {
@@ -324,23 +436,7 @@ nav a:hover .menuEffet {
 }
 
 
-.boxp{
-    background-color: #040931;
-    padding: 24px;
-    margin-left: -80px;
-    margin-right: -80PX;
-    flex-wrap: wrap-reverse;
-    border-radius: 50px;
-    border: 10px solid #f04;
-    align-items: center; 
-   
-    display: flex;
-    flex-wrap: wrap-reverse;
-    
-}
-.main{
-    padding: 35px;
-}
+
 
 .swiper {
     width: 50%;
@@ -352,7 +448,6 @@ min-width: 300px;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 24px;
     color: white;
 }
 
@@ -384,10 +479,7 @@ min-width: 300px;
 .is-heading{
     font-family: 'Protest Strike';
 }
-.sp_font-sixtyfour-spacing{
-    font-size: 30px;
-    font-family: 'Sixtyfour';
-}
+
 
 .site-footer {
     background-color: #002694;
@@ -411,12 +503,41 @@ min-width: 300px;
     font-size: 14px;
 }
 
-.presnetationTrump3{
-    padding: 50px;
-}
+
 
 .slideImage{
     border-radius: 50px;
-    max-width: 280px;
+    max-width: 100%;
 
+}
+
+
+
+/* Ciblage spécifique de la pagination à l'intérieur de la classe .swiper */
+.boxp .swiper-pagination {
+    position: relative;
+    margin-top: 15px;
+    bottom: 10px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    z-index: 10;
+}
+
+/* Ciblage spécifique des bullets dans la pagination */
+.boxp .swiper-pagination .swiper-pagination-bullet {
+    width: 20px;
+    height: 20px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
+    margin: 0 5px;
+    opacity: 1;
+    transition: background-color 0.3s, width 0.3s, height 0.3s;
+}
+
+/* Ciblage spécifique pour la bullet active */
+.boxp .swiper-pagination .swiper-pagination-bullet-active {
+    background-color: #f04;
+    width: 25px;
+    height: 25px;
 }

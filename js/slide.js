@@ -8,4 +8,8 @@ var swiper = new Swiper('.swiper', {
         delay: 3000, // Délai entre chaque slide
     },
     effect: 'slide', // Effet de transition
+    navigation: {
+        nextEl: '.swiper-next', // Sélecteur du bouton suivant
+        prevEl: '.swiper-prev', // Sélecteur du bouton précédent
+    }
 });

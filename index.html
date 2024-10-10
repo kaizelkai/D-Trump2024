@@ -1,14 +1,109 @@
 <!DOCTYPE html>
 <html lang="fr">
-    <head>
-    </head>
-    <body>
-        
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sections Pleine Page</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+            overflow-x: hidden;
+        }
+
+        .presnetationTrump {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        main {
+            display: none; /* Masqué par défaut */
+            width: 100vw;
+            height: 100vh;
+        }
+
+        .visible {
+            display: block; /* Rendre visible lorsqu'ajoutée */
+        }
+
+        section {
+            width: 100%;
+            height: 100vh; /* Chaque section prend toute la taille de la page */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+        }
+
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .bt {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding-bottom: 4px;
+            border-radius: 50px;
+            background-color: rgb(2, 2, 2);
+        }
+
+        .bt button {
+            width: 380px;
+            padding: 15px;
+            font-size: 33px;
+            border-radius: 30px;
+            border: none;
+            color: white;
+            background-color: #f04;
+            cursor: pointer;
+        }
+
+        .bt:hover {
+            padding-bottom: 0px;
+            padding-top: 4px;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Section de chargement avec la vidéo -->
+    <main id="chargement" class="visible">
+        <section class="presnetationTrump">
+            <video id="electionVideo" muted playsinline loading="eager" style="pointer-events: none;">
+                <source src="img/election page_1.mp4" type="video/webm">
+                Your browser does not support the video tag or the WebM format.
+            </video>
+            <div class="bt">
+                <button id="continueButton">VOTE</button>
+            </div>
+        </section>
+    </main>
     <script>
-        // Redirection vers 'mmmm-emmanuel.HTML' après 5 secondes
-        setTimeout(function() {
-            window.location.href = 'trump.html';
-        }, 1000); // 5000 millisecondes = 5 secondes
+        // Récupérer les éléments vidéo et sections
+        var video = document.getElementById('electionVideo');
+
+        // Démarrer la vidéo au clic sur le bouton VOTE
+        document.getElementById('continueButton').addEventListener('click', function() {
+            video.play();
+        });
+
+        // Masquer la section de chargement et afficher le contenu principal après la lecture de la vidéo
+        video.addEventListener('ended', function() {
+            setTimeout(function() {
+                window.location.href = 'trump.html';
+            }, 0);  // Afficher le contenu principal
+        });
     </script>
+</body>
 </html>

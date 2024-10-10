@@ -192,8 +192,15 @@ nav a:hover .menuEffet {
         right: 0; /* Aligner sur le bord droit */
     }
 
-    .swiper-prev:hover, .swiper-next:hover {
-        background-color: rgba(0, 0, 0, 0.7); /* Plus sombre au survol */
+    .swiper-prev:hover {
+        margin-right: -63px;
+        width: 100px; /* Largeur agrandie au survol */
+        height: 100px;
+    }
+    .swiper-next:hover {
+        margin-right: -63px;
+        width: 100px; /* Largeur agrandie au survol */
+        height: 100px;
     }
 }
 /* Style pour les petites écrans */

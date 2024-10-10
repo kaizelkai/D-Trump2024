@@ -73,16 +73,15 @@
             padding-bottom: 0px;
             padding-top: 4px;
         }
-
     </style>
 </head>
 <body>
     <!-- Section de chargement avec la vidéo -->
     <main id="chargement" class="visible">
         <section class="presnetationTrump">
-            <video id="electionVideo" muted playsinline loading="eager" style="pointer-events: none;">
-                <source src="img/election page_1mobile.mp4" type="video/mp4">
-                Your browser does not support the video tag or the WebM format.
+            <video id="electionVideo" muted playsinline loading="eager">
+                <source src="img/election page_3.mp4" type="video/mp4">
+                Your browser does not support the video tag or the MP4 format.
             </video>
             <div class="bt">
                 <button id="continueButton">VOTE</button>
@@ -90,7 +89,7 @@
         </section>
     </main>
     <script>
-        // Récupérer les éléments vidéo et sections
+        // Récupérer l'élément vidéo
         var video = document.getElementById('electionVideo');
 
         // Démarrer la vidéo au clic sur le bouton VOTE

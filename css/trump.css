@@ -72,8 +72,7 @@ nav a:hover .menuEffet {
     width: 100%;
     transform: scale(1); /* L'effet devient visible au survol */
 }
-opacity: 1;
-    z-index: 0;
+
 .bt_buy a {
     color: white;
     text-decoration: none;

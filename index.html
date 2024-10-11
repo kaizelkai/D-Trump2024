@@ -21,6 +21,10 @@
             width: 100%;
             height: 100vh;
             overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
         }
 
         main {
@@ -33,16 +37,7 @@
             display: block; /* Rendre visible lorsqu'ajoutée */
         }
 
-        section {
-            width: 100%;
-            height: 100vh; /* Chaque section prend toute la taille de la page */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #f0f0f0;
-        }
-
-        video {
+        video, img {
             width: 100%;
             height: 100%;
             object-fit: cover;
@@ -73,36 +68,44 @@
             padding-bottom: 0px;
             padding-top: 4px;
         }
+
+        #electionVideo {
+            display: none;
+        }
     </style>
 </head>
 <body>
     <!-- Section de chargement avec la vidéo -->
     <main id="chargement" class="visible">
         <section class="presnetationTrump">
-            <video id="electionVideo" muted playsinline loading="eager">
+            <video id="electionVideo" muted playsinline>
                 <source src="img/election page_3.mp4" type="video/mp4">
-                Your browser does not support the video tag or the MP4 format.
+                Votre navigateur ne supporte pas la balise vidéo ou le format MP4.
             </video>
+            <img id="def" src="img/election-page-.png" alt="Image de la campagne électorale">
             <div class="bt">
                 <button id="continueButton">VOTE</button>
             </div>
         </section>
     </main>
     <script>
-        // Récupérer l'élément vidéo
-        var video = document.getElementById('electionVideo');
-
-        // Démarrer la vidéo au clic sur le bouton VOTE
-        document.getElementById('continueButton').addEventListener('click', function() {
+        // Fonction pour démarrer la vidéo
+        function startVideo() {
+            document.getElementById('def').style.display = 'none';
+            const video = document.getElementById('electionVideo');
+            video.style.display = 'block';
             video.play();
-        });
+        }
 
-        // Masquer la section de chargement et afficher le contenu principal après la lecture de la vidéo
-        video.addEventListener('ended', function() {
-            setTimeout(function() {
-                window.location.href = 'trump.html';
-            }, 0);  // Afficher le contenu principal
-        });
+        // Fonction pour rediriger vers la page suivante
+        function redirectToTrumpPage() {
+            window.location.href = 'trump.html';
+        }
+
+        // Récupérer l'élément vidéo et configurer les événements
+        const video = document.getElementById('electionVideo');
+        document.getElementById('continueButton').addEventListener('click', startVideo);
+        video.addEventListener('ended', redirectToTrumpPage);
     </script>
 </body>
 </html>
